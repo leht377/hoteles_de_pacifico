@@ -1,0 +1,7 @@
+{
+  "name": "hoteles_de_pacifico",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
