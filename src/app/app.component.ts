@@ -10,7 +10,7 @@ export class AppComponent {
     { title: 'Administrar Hotel', url: '/pages/administrar-hoteles', icon: 'clipboard' },
     { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
     { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Registar', url: '/pages/opcionderegistro', icon: 'trash' },
+    { title: 'Registar', url: '/pages/opcionderegistro', icon: 'add-circle' },
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   constructor() {}
