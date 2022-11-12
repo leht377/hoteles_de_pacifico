@@ -3,18 +3,34 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>HOTELES</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
+      <ion-title size="large">sdsa</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
   <div id="container">
-    <h1>WELCOME</h1>
+    <ion-list>
+      <ion-item routerLink="hoteldetalles">
+        <ion-thumbnail slot="start">
+          <ion-img
+            src="https://docs-demo.ionic.io/assets/madison.jpg"
+            alt="The Wisconsin State Capitol building in Madison, WI at night"
+          ></ion-img>
+        </ion-thumbnail>
+        <div>
+          <h4>Tomatoes</h4>
+          <ion-label class="ion-text-wrap"
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos vel
+            commodi</ion-label
+          >
+        </div>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
