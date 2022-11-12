@@ -8,12 +8,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
     <div class="logo">
       <img src="../../../assets/Logo-removebg-preview.png" alt="Logo" />
@@ -31,7 +25,12 @@
         descricion del hotel, te permitirara dar carateristicas como:
         habitaciones, precios, ofertas etc...
       </ion-card-content>
-      <ion-button class="Boton1" fill="outline">registar</ion-button>
+      <ion-button
+        class="Boton1"
+        fill="outline"
+        routerLink="registroadministrador"
+        >registar</ion-button
+      >
     </ion-card>
 
     <ion-card>
@@ -50,7 +49,9 @@
         tus gustos, podras hacer comentarios sobre las esperias que tu viste en
         el hotel entre muchas cosas más.
       </ion-card-content>
-      <ion-button class="Boton2" fill="outline">registar</ion-button>
+      <ion-button class="Boton2" fill="outline" routerLink="registrocliente"
+        >registar</ion-button
+      >
     </ion-card>
   </div>
 </ion-content>

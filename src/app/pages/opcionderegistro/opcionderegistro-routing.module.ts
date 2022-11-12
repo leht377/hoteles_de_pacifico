@@ -7,6 +7,15 @@ const routes: Routes = [
   {
     path: '',
     component: OpcionderegistroPage
+  },
+  {
+    path: 'registrocliente',
+    loadChildren: () => import('../../pages/registrocliente/registrocliente.module').then( m => m.RegistroclientePageModule)
+  },
+  {
+    path: 'registroadministrador',
+    loadChildren: () => import('../../pages/registroadministrador/registroadministrador.module').
+    then( m => m.RegistroadministradorPageModule)
   }
 ];
 
