@@ -24,6 +24,11 @@ const routes: Routes = [
     path: 'pages/opcionderegistro',
     loadChildren: () => import('./pages/opcionderegistro/opcionderegistro.module').then( m => m.OpcionderegistroPageModule)
   },
+  {
+    path: 'pages/administrar-hoteles',
+    loadChildren: () => import('./pages/administrar-hoteles/administrar-hoteles.module').then( m => m.AdministrarHotelesPageModule)
+  },
+
 
 
 ];
