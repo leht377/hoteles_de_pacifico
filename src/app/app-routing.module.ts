@@ -17,7 +17,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'registrohotel',
+    path: 'pages/registrohotel',
     loadChildren: () => import('./pages/registrohotel/registrohotel.module').then( m => m.RegistrohotelPageModule)
   },
   {

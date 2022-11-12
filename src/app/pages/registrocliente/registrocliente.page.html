@@ -15,21 +15,40 @@
     </ion-card-header> -->
 
     <ion-card-content>
+      <div class="imagen">
+        <img src="../../../assets/Logo-removebg-preview.png" alt="Logo" />
+      </div>
+
       <form>
         <ion-list>
-          <ion-item>
-            <ion-label>Username</ion-label>
-            <ion-input type="text"></ion-input>
+          <ion-item fill="outline">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" placeholder="Enter text"></ion-input>
           </ion-item>
 
-          <ion-item>
-            <ion-label>Password</ion-label>
-            <ion-input type="password"></ion-input>
+          <ion-item fill="outline">
+            <ion-label position="floating">Correo Eletronico</ion-label>
+            <ion-input type="email" placeholder="Enter email"></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline">
+            <ion-label position="floating">Numero Telefonico</ion-label>
+            <ion-input type="number" placeholder="Enter number"></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline">
+            <ion-label position="floating">Nombre De Usuario</ion-label>
+            <ion-input type="text" placeholder="Enter text"></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="password" placeholder="Enter password"></ion-input>
           </ion-item>
         </ion-list>
 
-        <div padding>
-          <button block>Sign In</button>
+        <div class="Boton">
+          <ion-button fill="outline">Registrase</ion-button>
         </div>
       </form>
     </ion-card-content>
