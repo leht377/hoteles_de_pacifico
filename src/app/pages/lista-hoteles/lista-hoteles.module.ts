@@ -7,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ListaHotelesPageRoutingModule } from './lista-hoteles-routing.module';
 
 import { ListaHotelesPage } from './lista-hoteles.page';
-
+import { EstrellasComponent } from '../../components/estrellas/estrellas.component';
+import { HotelItemComponent } from '../../components/hotel-item/hotel-item.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +16,6 @@ import { ListaHotelesPage } from './lista-hoteles.page';
     IonicModule,
     ListaHotelesPageRoutingModule
   ],
-  declarations: [ListaHotelesPage]
+  declarations: [ListaHotelesPage,EstrellasComponent,HotelItemComponent]
 })
 export class ListaHotelesPageModule {}
