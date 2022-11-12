@@ -1,9 +1,53 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>opcionderegistro</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
+  <div id="container">
+    <img src="../../../assets/Logo-removebg-preview.png" alt="Logo" />
+    <ion-card>
+      <img alt="Logo" src="../../../assets/Logo-removebg-preview.png" />
+      <ion-card-header>
+        <ion-card-title>Registro Como Admistrador</ion-card-title>
+        <ion-card-subtitle>Te permite </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Si te registras como adminitrador podras registrar tu hotel, dar una
+        descricion del hotel, te permitirara dar carateristicas como:
+        habitaciones, precios, ofertas etc...
+      </ion-card-content>
+      <ion-button fill="outline">registar</ion-button>
+    </ion-card>
+
+    <ion-card>
+      <img
+        alt="Silhouette of mountains"
+        src="../../../assets/Logo-removebg-preview.png"
+      />
+      <ion-card-header>
+        <ion-card-title>Resgistro Como Cliente</ion-card-title>
+        <ion-card-subtitle>Te permite</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Si te registar como cliente podras ver los diferentes Hoteles de el
+        distrito especia de Buenaventura, podras clasificar los hoteles segun
+        tus gustos, podras hacer comentarios sobre las esperias que tu viste en
+        el hotel entre muchas cosas más.
+      </ion-card-content>
+      <ion-button fill="outline">registar</ion-button>
+    </ion-card>
+  </div>
 </ion-content>

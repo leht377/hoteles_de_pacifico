@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/lista-hoteles/lista-hoteles.module').then( m => m.ListaHotelesPageModule)
   },
   {
+    path: 'hoteldetalles',
+    loadChildren: () => import('./pages/hoteldetalles/hoteldetalles.module').then( m => m.HoteldetallesPageModule)
+  },
+  {
     path: 'registroadministrador',
     loadChildren: () => import('./pages/registroadministrador/registroadministrador.module').then( m => m.RegistroadministradorPageModule)
   },
@@ -24,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registrohotel/registrohotel.module').then( m => m.RegistrohotelPageModule)
   },
   {
-    path: 'opcionderegistro',
+    path: 'pages/opcionderegistro',
     loadChildren: () => import('./pages/opcionderegistro/opcionderegistro.module').then( m => m.OpcionderegistroPageModule)
   },
 
