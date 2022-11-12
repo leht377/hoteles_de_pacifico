@@ -37,11 +37,6 @@
           alt="Silhouette of mountains"
           src="https://ionicframework.com/docs/img/demos/card-media.png"
       /></ion-col>
-      <ion-col>
-        <img
-          alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
-      /></ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
@@ -61,4 +56,35 @@
       /></ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Calificar Hotel</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item>
+          <p>Calificacion</p>
+
+          <ion-range
+            [min]="1"
+            [max]="5"
+            [pin]="true"
+            [ticks]="true"
+            [snaps]="true"
+          ></ion-range>
+        </ion-item>
+        <ion-item>
+          <ion-label>Comentar</ion-label>
+          <ion-textarea placeholder="Type something here"></ion-textarea>
+        </ion-item>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Comentarios</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">comentarios..........</div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>

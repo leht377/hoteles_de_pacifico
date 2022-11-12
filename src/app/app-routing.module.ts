@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registroadministrador/registroadministrador.module').then( m => m.RegistroadministradorPageModule)
   },
   {
-    path: 'registrocliente',
+    path: 'pages/registrocliente',
     loadChildren: () => import('./pages/registrocliente/registrocliente.module').then( m => m.RegistroclientePageModule)
   },
   {
