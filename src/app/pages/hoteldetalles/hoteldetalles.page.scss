@@ -4,8 +4,20 @@
 //   }
 h4 {
     margin-left: 20px; 
+    font-weight: bold;
 }
 ion-grid {
     margin: auto;
     width: 90%;
+}
+
+ion-accordion-group{ 
+    margin: auto;
+    width: 90%;
+}
+p {
+    display:block;
+}
+ion-range{
+    display: block;
 }
