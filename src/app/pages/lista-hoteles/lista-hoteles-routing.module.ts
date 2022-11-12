@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ListaHotelesPage
-  }
+  },
+  {
+    path: 'hoteldetalles',
+    loadChildren: () => import('../../pages/hoteldetalles/hoteldetalles.module').then( m => m.HoteldetallesPageModule)
+  },
 ];
 
 @NgModule({
