@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'pages/administrar-hoteles',
     loadChildren: () => import('./pages/administrar-hoteles/administrar-hoteles.module').then( m => m.AdministrarHotelesPageModule)
   },
+  {
+    path: 'pages/login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+
 
 
 
