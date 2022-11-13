@@ -8,10 +8,10 @@ export class AppComponent {
   public appPages = [
     { title: 'Hoteles', url: '/pages/lista-hoteles', icon: 'bed' },
     { title: 'Administrar Hotel', url: '/pages/administrar-hoteles', icon: 'clipboard' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Registar', url: '/pages/opcionderegistro', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Iniciar sesion', url: '/folder/Favorites', icon: 'log-in' },
+   // { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
+    { title: 'Registar', url: '/pages/opcionderegistro', icon: 'add-circle' },
+    { title: 'Cerrar sesión', url: '/folder/Spam', icon: 'exit' },
   ];
   constructor() {}
 }
