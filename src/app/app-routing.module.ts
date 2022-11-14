@@ -11,10 +11,7 @@ const routes: Routes = [
     path: 'pages/lista-hoteles',
     loadChildren: () => import('./pages/lista-hoteles/lista-hoteles.module').then( m => m.ListaHotelesPageModule)
   },
-  {
-    path: 'hoteldetalles',
-    loadChildren: () => import('./pages/hoteldetalles/hoteldetalles.module').then( m => m.HoteldetallesPageModule)
-  },
+ 
   {
     path: 'pages/opcionderegistro',
     loadChildren: () => import('./pages/opcionderegistro/opcionderegistro.module').then( m => m.OpcionderegistroPageModule)

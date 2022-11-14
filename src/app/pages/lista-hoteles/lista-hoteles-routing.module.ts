@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: 'hoteldetalles',
     loadChildren: () => import('../../pages/hoteldetalles/hoteldetalles.module').then( m => m.HoteldetallesPageModule)
-  },
+  }
 ];
 
 @NgModule({
