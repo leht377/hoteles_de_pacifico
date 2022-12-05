@@ -1,14 +1,11 @@
 
-ul {
+ion-list{
     display: flex;
-    gap: 10px; 
     box-sizing: border-box;
     padding: 0;
+
 }
 
-li{
-    list-style: none;
-}
 
 ion-icon{
     font-size: 1.3rem;
