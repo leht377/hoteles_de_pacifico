@@ -1,7 +1,6 @@
 export class Administrador{
-    id:string;
-    nombre:string;
-    correo:string;
-    usuario_id:number;
-    
+    id: string;
+    nombre: string;
+    correo: string;
+    usuarioId: number;
 }

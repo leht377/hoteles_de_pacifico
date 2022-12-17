@@ -3,8 +3,10 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Username</ion-list-header>
-          <ion-note>pandita@gmail.com</ion-note>
+          <ion-list-header>{{
+            usuariologeado.usuario || "Visitante"
+          }}</ion-list-header>
+          <ion-note>{{ usuariologeado.correo }}</ion-note>
 
           <ion-menu-toggle
             auto-hide="false"

@@ -13,21 +13,31 @@
       <div class="imagen">
         <img src="../../../assets/Logo-removebg-preview.png" alt="Logo" />
       </div>
-      <form>
+      <form (ngSubmit)="onLogin()">
         <ion-list>
-          <ion-item fill="outline">
+          <ion-item fill="outline" class="ion-margin-top">
             <ion-label position="floating">Usuario</ion-label>
-            <ion-input type="text" placeholder="Enter text"></ion-input>
+            <ion-input
+              type="text"
+              name="usuario"
+              placeholder="Ingresar usuario"
+              [(ngModel)]="usuario.usuario"
+            ></ion-input>
           </ion-item>
 
-          <ion-item fill="outline">
+          <ion-item fill="outline" class="ion-margin-top">
             <ion-label position="floating">Contraseña</ion-label>
-            <ion-input type="password" placeholder="Enter password"></ion-input>
+            <ion-input
+              type="password"
+              name="contrasena"
+              placeholder="Ingresar password"
+              [(ngModel)]="usuario.contrasena"
+            ></ion-input>
           </ion-item>
         </ion-list>
 
         <div class="Boton">
-          <ion-button fill="outline" routerLink="/">Iniciar sesion</ion-button>
+          <ion-button fill="outline" type="submit">Iniciar sesion</ion-button>
         </div>
       </form>
     </ion-card-content>

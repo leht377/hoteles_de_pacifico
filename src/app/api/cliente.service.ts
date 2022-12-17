@@ -16,6 +16,14 @@ export class ClienteService {
 
   constructor(private http: HttpClient) {   }
 
+  obtener(id: string) {
+    return this.http.get<Cliente>(this.url + `/clientes/findByIdUsername/${id}`)
+    .pipe(
+      map((res: any) => res[0]),
+      catchError((error)=> of(error))
+    );
+  }
+
   crear(cliente: Cliente){
     return this.http.post<Cliente>(this.url + '/clientes',cliente)
     .pipe(

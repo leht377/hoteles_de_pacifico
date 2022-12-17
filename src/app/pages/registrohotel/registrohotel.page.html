@@ -14,23 +14,69 @@
         <img src="../../../assets/Logo-removebg-preview.png" alt="Logo" />
       </div>
 
-      <form>
+      <form (ngSubmit)="onCreate()">
         <ion-list>
           <ion-item fill="outline">
-            <ion-label position="floating">Nombre Del Hotel</ion-label>
-            <ion-input type="text" placeholder="Enter text"></ion-input>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input
+              type="text"
+              name="nombre"
+              [(ngModel)]="hotel.nombre"
+              placeholder="Nombre del Hotel"
+            ></ion-input>
           </ion-item>
 
-          <ion-item fill="outline">
-            <ion-label position="floating">Dirección Del Hotel</ion-label>
-            <ion-input type="text" placeholder="Enter text"></ion-input>
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input
+              type="text"
+              name="direccion"
+              [(ngModel)]="hotel.direccion"
+              placeholder="Dirección del Hotel"
+            ></ion-input>
           </ion-item>
 
-          <ion-item fill="outline">
-            <ion-label position="floating">Numero De Contacto</ion-label>
-            <ion-input type="number" placeholder="Enter number"></ion-input>
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">Numero de contacto</ion-label>
+            <ion-input
+              type="number"
+              name="telefono"
+              [(ngModel)]="hotel.telefono"
+              placeholder="Telefono"
+            ></ion-input>
           </ion-item>
-          <ion-accordion-group>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">NIT</ion-label>
+            <ion-input
+              type="number"
+              name="nit"
+              [(ngModel)]="hotel.nit"
+              placeholder="NIT"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">Descripcion</ion-label>
+            <ion-input
+              type="text"
+              name="descripcion"
+              [(ngModel)]="hotel.descripcion"
+              placeholder="Descripcion"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">URL foto</ion-label>
+            <ion-input
+              type="text"
+              name="foto"
+              [(ngModel)]="hotel.foto"
+              placeholder="URL foto"
+            ></ion-input>
+          </ion-item>
+
+          <!-- <ion-accordion-group>
             <ion-accordion value="first">
               <ion-item slot="header" color="light">
                 <ion-label>Tipo de Habitación</ion-label>
@@ -50,11 +96,11 @@
                 </ion-item>
               </div>
             </ion-accordion>
-          </ion-accordion-group>
+          </ion-accordion-group> -->
         </ion-list>
 
         <div class="Boton">
-          <ion-button fill="outline" routerLink="/">Registrase</ion-button>
+          <ion-button fill="outline" type="submit">Registrase</ion-button>
         </div>
       </form>
     </ion-card-content>
