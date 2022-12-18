@@ -1,34 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 
-import { AdministradorService } from '../../api/administrador.service';
-import { UsuarioService } from '../../api/usuario.service';
-import { Administrador} from '../../interface/administrador';
-import { Usuario} from '../../interface/usuario';
+ import { AdministradorService } from '../../api/administrador.service';
+ import { UsuarioService } from '../../api/usuario.service';
+ import { Administrador} from '../../interface/administrador';
+ import { Usuario} from '../../interface/usuario';
 
-@Component({
-  selector: 'app-registroadministrador',
-  templateUrl: './registroadministrador.page.html',
-  styleUrls: ['./registroadministrador.page.scss'],
-})
-export class RegistroadministradorPage implements OnInit {
+ @Component({
+   selector: 'app-registroadministrador',
+   templateUrl: './registroadministrador.page.html',
+   styleUrls: ['./registroadministrador.page.scss'],
+ })
+ export class RegistroadministradorPage implements OnInit {
 
-  public administrador = new Administrador ();
-  public usuario = new Usuario ();
+   public administrador = new Administrador ();
+   public usuario = new Usuario ();
 
-  constructor(
+   constructor(
   private  administradorService: AdministradorService,
-  private usuarioService: UsuarioService
+   private usuarioService: UsuarioService
 
   ) { }
 
-  ngOnInit() {
-    this.usuario.rol = 'administrador';
-  }
+ ngOnInit() {
+   this.usuario.rol = 'administrador';
+    }
 
-  // onCreate(){
-  //    this.usuarioService.crear(this.usuario).subscribe((usuario)=>{
-  //    this.administrador.usuarioId = usuario.id;
-  //    this.administradorService.crear(this.administrador).subscribe((administrador) => console.log(administrador));
-  //   });
-  // }
+//     onCreate(){
+//       this.usuarioService.crear(this.usuario).subscribe((usuario)=>{
+//        this.administrador.usuarioId = usuario.id;
+//        this.administradorService(this.administrador).subscribe((administrador) => console.log(administrador));
+//    });
+//  }
 }
