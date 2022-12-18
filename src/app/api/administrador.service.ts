@@ -23,6 +23,10 @@ export class AdministradorService {
     );
   }
 
+  crear(administrador: Administrador){
+    console.log('creando');
+  }
+
 }
 
 // export class AdministradorService {

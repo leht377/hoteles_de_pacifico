@@ -14,21 +14,21 @@ export class RegistroadministradorPage implements OnInit {
 
   public administrador = new Administrador ();
   public usuario = new Usuario ();
-  
+
   constructor(
-  private  administradorService :AdministradorService,
-  private usuarioService : UsuarioService
+  private  administradorService: AdministradorService,
+  private usuarioService: UsuarioService
 
   ) { }
 
   ngOnInit() {
     this.usuario.rol = 'administrador';
-     }
-
-     onCreate(){   
-     this.usuarioService.crear(this.usuario).subscribe((usuario)=>{ 
-    this.administrador.usuario_id = usuario.id;
-    this.administradorService.crear(this.administrador).subscribe((administrador) => console.log(administrador));
-    });
   }
+
+  // onCreate(){
+  //    this.usuarioService.crear(this.usuario).subscribe((usuario)=>{
+  //    this.administrador.usuarioId = usuario.id;
+  //    this.administradorService.crear(this.administrador).subscribe((administrador) => console.log(administrador));
+  //   });
+  // }
 }
