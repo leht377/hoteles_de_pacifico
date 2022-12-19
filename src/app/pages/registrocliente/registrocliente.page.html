@@ -19,85 +19,59 @@
         <img src="../../../assets/Logo-removebg-preview.png" alt="Logo" />
       </div>
 
-      <form
-        [formGroup]="rcliente"
-        (ngSubmit)="onCreate()"
-        (ngSubmit)="loForm()"
-      >
+      <form [formGroup]="registrocliente" (ngSubmit)="onCreate()">
         <ion-list>
           <ion-item fill="outline">
             <ion-label position="floating">Nombre</ion-label>
             <ion-input
               type="text"
               placeholder="Nombre completo"
-              fromControlName="nombre"
-              [(ngModel)]="cliente.nombre"
+              formControlName="nombre"
               required="true"
             ></ion-input>
           </ion-item>
 
-          <ion-item
-            fill="outline"
-            *ngIf="rcliente.get('nombre').errors && todo.get('nombre').dirty"
+          <!-- <ion-item
+            [ngIf]="formulario.get('nombre').errors && formulario.get('nombre').dirty"
           >
             <p
               color="danger"
               ion-text
-              *ngIf="rcliente.get('nombre').hasError('required')"
+              [ngIf]="formulario.get('nombre').hasError('required')"
             >
               se requiere este campo
             </p>
             <p
               color="danger"
               ion-text
-              *ngIf="rcliente.get('nombre').hasError('minlength')"
+              [ngIf]="formulario.get('nombre').hasError('minlength')"
             >
               cantidad minima de caracteres es (4)
             </p>
             <p
               color="danger"
               ion-text
-              *ngIf="rcliente.get('nombre').hasError('maxlength')"
+              [ngIf]="formulario.get('nombre').hasError('maxlength')"
             >
               cantidad maxima de caracteres es (10)
             </p>
-          </ion-item>
+          </ion-item> -->
+
+          <div
+            class="alert-danger"
+            [ngIf]="nombre.invalid && (nombre.dirty || nombre.touched)"
+          >
+            <div class="container-error-message">este campoco es requerido</div>
+            minimo dbufbfbfufuiuhuhhyhyh
+          </div>
 
           <ion-item fill="outline" class="ion-margin-top">
             <ion-label position="floating">Correo Eletronico</ion-label>
             <ion-input
               type="email"
               placeholder="Correo"
-              fromControlName="correo"
-              [(ngModel)]="cliente.correo"
-              required="true"
+              formControlName="correo"
             ></ion-input>
-          </ion-item>
-          <ion-item
-            fill="outline"
-            *ngIf="rcliente.get('correo').errors && todo.get('correo').dirty"
-          >
-            <p
-              color="danger"
-              ion-text
-              *ngIf="rcliente.get('correo').hasError('required')"
-            >
-              se requiere este campo
-            </p>
-            <p
-              color="danger"
-              ion-text
-              *ngIf="rcliente.get('correo').hasError('minlength')"
-            >
-              cantidad minima de caracteres es (4)
-            </p>
-            <p
-              color="danger"
-              ion-text
-              *ngIf="rcliente.get('correo').hasError('maxlength')"
-            >
-              cantidad maxima de caracteres es (10)
-            </p>
           </ion-item>
 
           <ion-item fill="outline" class="ion-margin-top">
@@ -105,36 +79,8 @@
             <ion-input
               type="number"
               placeholder="Telefono"
-              fromControlName="telefono"
-              [(ngModel)]="cliente.telefono"
-              required="true"
+              formControlName="telefono"
             ></ion-input>
-          </ion-item>
-          <ion-item
-            fill="outline"
-            *ngIf="rcliente.get('telefono').errors && todo.get('telefono').dirty"
-          >
-            <p
-              color="danger"
-              ion-text
-              *ngIf="rcliente.get('telefono').hasError('required')"
-            >
-              se requiere este campo
-            </p>
-            <p
-              color="danger"
-              ion-text
-              *ngIf="rcliente.get('telefono').hasError('minlength')"
-            >
-              cantidad minima de caracteres es (4)
-            </p>
-            <p
-              color="danger"
-              ion-text
-              *ngIf="rcliente.get('telefono').hasError('maxlength')"
-            >
-              cantidad maxima de caracteres es (10)
-            </p>
           </ion-item>
 
           <ion-item fill="outline" class="ion-margin-top">
@@ -142,11 +88,56 @@
             <ion-input
               type="number"
               placeholder="Cedula"
-              fromControlName="cedula"
-              [(ngModel)]="cliente.cedula"
+              formControlName="cedula"
+            ></ion-input>
+          </ion-item>
+        </ion-list>
+      </form>
+
+      <div class="Boton">
+        <ion-button fill="outline" type="submit">Registrase</ion-button>
+      </div>
+
+      <!--       
+      <form [formGroup]="rcliente" (ngSubmit)="onCreate()">
+        <ion-list>
+          <ion-item fill="outline">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input
+              type="text"
+              placeholder="Nombre completo"
+              name="nombre"
               required="true"
             ></ion-input>
           </ion-item>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">Correo Eletronico</ion-label>
+            <ion-input
+              type="email"
+              placeholder="Correo"
+              name="correo"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">Numero Telefonico</ion-label>
+            <ion-input
+              type="number"
+              placeholder="Telefono"
+              name="telefono"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">Cedula</ion-label>
+            <ion-input
+              type="number"
+              placeholder="Cedula"
+              name="cedula"
+            ></ion-input>
+          </ion-item>
+
           <ion-item
             fill="outline"
             *ngIf="rcliente.get('cedula').errors && todo.get('cedula').dirty"
@@ -172,7 +163,7 @@
             >
               cantidad maxima de caracteres es (10)
             </p>
-          </ion-item>
+          </ion-item> 
 
           <ion-item fill="outline" class="ion-margin-top">
             <ion-label position="floating">Usuario</ion-label>
@@ -180,8 +171,6 @@
               type="text"
               placeholder="Nombre de usuario"
               fromControlName="usuario"
-              [(ngModel)]="usuario.usuario"
-              required="true"
             ></ion-input>
           </ion-item>
 
@@ -191,8 +180,6 @@
               type="password"
               placeholder="Contraseña"
               fromControlName="contrasena"
-              [(ngModel)]="usuario.contrasena"
-              required="true"
             ></ion-input>
           </ion-item>
         </ion-list>
@@ -200,7 +187,7 @@
         <div class="Boton">
           <ion-button fill="outline" type="submit">Registrase</ion-button>
         </div>
-      </form>
+      </form>  -->
     </ion-card-content>
   </ion-card>
 </ion-content>
