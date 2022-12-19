@@ -20,33 +20,18 @@ export class AdministradorService {
     .pipe(
       map((res: any) => res[0]),
       catchError((error)=> of(error))
+
     );
   }
 
   crear(administrador: Administrador){
-    console.log('creando');
+    // console.log('creando');
+    return this.http.post<Administrador>(this.url + '/administradors',administrador)
+    .pipe(
+      map((res: any) => res),
+      catchError((error)=> of(error))
+    );
   }
 
 }
 
-// export class AdministradorService {
-//   private administrador$= new Subject<Administrador[]>()
-//   public administrador: Administrador[] = []
-
-//   constructor(
-//     private http: HttpClient
-//   ) { }
-
-//   get$(): Observable<Administrador[]>{
-//     return this.administrador$.asObservable();
-//   }
-
-// gets():Observable<any>{
-//   this.administrador = [];
-// return this.http.get<Administrador>(environment.apiUrl)
-
-// }
-
-
-
-// }

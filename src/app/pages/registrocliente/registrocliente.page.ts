@@ -16,8 +16,7 @@ import { Hotel } from 'src/app/interface/hotel';
 export class RegistroclientePage implements OnInit {
   public cliente = new Cliente ();
   public usuario = new Usuario ();
-  public correoExpresion = '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]'+
-                          '{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/';
+  
 
 
 
@@ -32,9 +31,11 @@ export class RegistroclientePage implements OnInit {
     this.formulario = this.registroFb.group({
       nombre: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
       correo: new FormControl('',[Validators.required, Validators.minLength(4),
-        Validators.maxLength(10), Validators.pattern(this.correoExpresion)]),
+        Validators.maxLength(20)]),
       telefono: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
-      cedula: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)])
+      cedula: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
+      usuario  : new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
+      contrasena: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)])
   });
 
 
@@ -51,14 +52,15 @@ export class RegistroclientePage implements OnInit {
   // }
 
    onCreate(){
-    console.log('entro');
-    console.log(this.formulario.get('nombre').value );
-   // this.formulario.get('nombre');
-    // this.registrocliente.get
-    //  this.usuarioServicios.crear(this.usuario).subscribe((usuario) => {
-    //    this.cliente.usuarioId = usuario.id;
-    //    this.clienteServicios.crear(this.cliente).subscribe((cliente) => console.log(cliente));
-    //  });
+   this.cliente.setValues(this.formulario.value)
+   console.log(this.cliente)
+   this.usuario.setValues(this.formulario.value)
+   console.log(this.cliente)
+  
+      this.usuarioServicios.crear(this.usuario).subscribe((usuario) => {
+        this.cliente.usuarioId = usuario.id;
+      this.clienteServicios.crear(this.cliente).subscribe((cliente) => console.log(cliente));
+       });
    }
 
    //get nombre(){ return this.formulario.get('nombre')}
