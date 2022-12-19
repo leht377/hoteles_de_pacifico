@@ -9,17 +9,51 @@
 
 <ion-content>
   <ion-card>
-    <!-- <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header> -->
-
     <ion-card-content>
       <div class="imagen">
         <img src="../../../assets/Logo-removebg-preview.png" alt="Logo" />
       </div>
 
-      <form [formGroup]="registrocliente" (ngSubmit)="onCreate()">
+      <form [formGroup]="formulario" (ngSubmit)="onCreate()">
+        <ion-list>
+          <ion-item fill="outline">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input
+              type="text"
+              placeholder="Nombre completo"
+              formControlName="nombre"
+              required="true"
+            ></ion-input>
+            <div
+              *ngIf="formulario.get('nombre').errors && formulario.get('nombre').dirty"
+            >
+              <p
+                class="alert-danger"
+                *ngIf="formulario.get('nombre').hasError('required')"
+              >
+                se requiere este campo
+              </p>
+              <p
+                class="alert-danger"
+                *ngIf="formulario.get('nombre').hasError('minlength')"
+              >
+                cantidad minima de caracteres es (4)
+              </p>
+              <p
+                class="alert-danger"
+                *ngIf="formulario.get('nombre').hasError('maxlength')"
+              >
+                cantidad maxima de caracteres es (10)
+              </p>
+            </div>
+          </ion-item>
+        </ion-list>
+        <div class="Boton">
+          <ion-button fill="outline" type="submit">Registrase</ion-button>
+        </div>
+      </form>
+      <!--
+      <form [formGroup]="formulario" (ngSubmit)="onCreate()">
         <ion-list>
           <ion-item fill="outline">
             <ion-label position="floating">Nombre</ion-label>
@@ -31,39 +65,6 @@
             ></ion-input>
           </ion-item>
 
-          <!-- <ion-item
-            [ngIf]="formulario.get('nombre').errors && formulario.get('nombre').dirty"
-          >
-            <p
-              color="danger"
-              ion-text
-              [ngIf]="formulario.get('nombre').hasError('required')"
-            >
-              se requiere este campo
-            </p>
-            <p
-              color="danger"
-              ion-text
-              [ngIf]="formulario.get('nombre').hasError('minlength')"
-            >
-              cantidad minima de caracteres es (4)
-            </p>
-            <p
-              color="danger"
-              ion-text
-              [ngIf]="formulario.get('nombre').hasError('maxlength')"
-            >
-              cantidad maxima de caracteres es (10)
-            </p>
-          </ion-item> -->
-
-          <div
-            class="alert-danger"
-            [ngIf]="nombre.invalid && (nombre.dirty || nombre.touched)"
-          >
-            <div class="container-error-message">este campoco es requerido</div>
-            minimo dbufbfbfufuiuhuhhyhyh
-          </div>
 
           <ion-item fill="outline" class="ion-margin-top">
             <ion-label position="floating">Correo Eletronico</ion-label>
@@ -92,11 +93,7 @@
             ></ion-input>
           </ion-item>
         </ion-list>
-      </form>
-
-      <div class="Boton">
-        <ion-button fill="outline" type="submit">Registrase</ion-button>
-      </div>
+      </form> -->
     </ion-card-content>
   </ion-card>
 </ion-content>
