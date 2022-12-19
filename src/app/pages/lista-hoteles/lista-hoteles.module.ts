@@ -7,15 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { ListaHotelesPageRoutingModule } from './lista-hoteles-routing.module';
 
 import { ListaHotelesPage } from './lista-hoteles.page';
-import { EstrellasComponent } from '../../components/estrellas/estrellas.component';
+import { EstrellasModule } from '../../components/estrellas/estrellas.module';
 import { HotelItemComponent } from '../../components/hotel-item/hotel-item.component';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListaHotelesPageRoutingModule
+    ListaHotelesPageRoutingModule,
+    EstrellasModule
   ],
-  declarations: [ListaHotelesPage,EstrellasComponent,HotelItemComponent]
+  declarations: [ListaHotelesPage,HotelItemComponent]
 })
 export class ListaHotelesPageModule {}

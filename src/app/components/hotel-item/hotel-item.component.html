@@ -8,6 +8,6 @@
   <div>
     <h4>{{ hotel.nombre }}</h4>
     <ion-label class="ion-text-wrap">{{ hotel.descripcion }}</ion-label>
-    <app-estrellas></app-estrellas>
+    <app-estrellas [calificacion]="hotel.calificacion"></app-estrellas>
   </div>
 </ion-item>

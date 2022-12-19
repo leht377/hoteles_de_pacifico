@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { HoteldetallesPageRoutingModule } from './hoteldetalles-routing.module';
-import { EstrellasComponent } from '../../components/estrellas/estrellas.component';
+import { EstrellasModule } from '../../components/estrellas/estrellas.module';
 
 import { HoteldetallesPage } from './hoteldetalles.page';
 
@@ -14,8 +14,9 @@ import { HoteldetallesPage } from './hoteldetalles.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HoteldetallesPageRoutingModule
+    HoteldetallesPageRoutingModule,
+    EstrellasModule
   ],
-  declarations: [HoteldetallesPage,EstrellasComponent]
+  declarations: [HoteldetallesPage]
 })
 export class HoteldetallesPageModule {}

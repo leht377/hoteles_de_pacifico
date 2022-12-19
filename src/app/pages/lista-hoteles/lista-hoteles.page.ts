@@ -15,7 +15,6 @@ export class ListaHotelesPage implements OnInit {
   ngOnInit() {
     this.hotelServicios.getAll$().subscribe((hotel: [])=> {
       this.listaHoteles = hotel;
-      console.log(this.listaHoteles);
     });
 
     this.hotelServicios.getAll().subscribe((res)=>{

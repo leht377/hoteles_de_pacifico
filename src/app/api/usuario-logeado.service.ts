@@ -21,7 +21,6 @@ export class UsuarioLogeadoService {
   }
 
   get$(): Observable<UsuarioLogeado> {
-    console.log(this.usuarioLogeado$);
     return this.usuarioLogeado$.asObservable();
   }
 

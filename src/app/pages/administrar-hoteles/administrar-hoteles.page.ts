@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { UsuarioLogeadoService } from 'src/app/api/usuario-logeado.service';
+import { UsuarioLogeado } from 'src/app/interface/usuarioLogeado';
 import { HotelService } from '../../api/hotel.service';
 import { Hotel } from '../../interface/hotel';
 @Component({
@@ -10,15 +12,26 @@ import { Hotel } from '../../interface/hotel';
 export class AdministrarHotelesPage implements OnInit {
   public hoteles: Hotel [] = [];
   public hotelSubscripcion = new Subscription();
-  constructor(private hotelServicios: HotelService) { }
+  public usuarioLogeadoSubscripcion = new Subscription();
+  public usuarioLogeado = new UsuarioLogeado();
+
+  constructor(private hotelServicios: HotelService, private usuarioLogeadoServicios: UsuarioLogeadoService) { }
 
   ngOnInit() {
-    this.hotelSubscripcion = this.hotelServicios.hotelPorAdministrador$().subscribe((res: [])=> {
-      this.hoteles = res;
-      console.log(res);
+
+    this.usuarioLogeadoSubscripcion = this.usuarioLogeadoServicios.get$().subscribe(res =>  {
+      this.usuarioLogeado.setValues(res);
     });
 
-    this.hotelServicios.hotelPorAdministrador('639cdca7a414542fc09857b6').subscribe((res)=>{
+    this.usuarioLogeadoServicios.get();
+
+
+    this.hotelSubscripcion = this.hotelServicios.hotelPorAdministrador$().subscribe((res: [])=> {
+      this.hoteles = res;
+
+    });
+
+    this.hotelServicios.hotelPorAdministrador( this.usuarioLogeado.id).subscribe((res)=>{
       console.log('cargando.....');
     });
   }
