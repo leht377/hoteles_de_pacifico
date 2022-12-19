@@ -31,9 +31,10 @@ export class RegistroclientePage implements OnInit {
   ) {
     this.formulario = this.registroFb.group({
       nombre: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
-      correo: new FormControl('',[]),
-      telefono: new FormControl('',[]),
-      cedula: new FormControl('',[])
+      correo: new FormControl('',[Validators.required, Validators.minLength(4),
+        Validators.maxLength(10), Validators.pattern(this.correoExpresion)]),
+      telefono: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
+      cedula: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)])
   });
 
 

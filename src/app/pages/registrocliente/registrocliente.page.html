@@ -24,28 +24,28 @@
               formControlName="nombre"
               required="true"
             ></ion-input>
-            <div
-              *ngIf="formulario.get('nombre').errors && formulario.get('nombre').dirty"
+          </ion-item>
+          <ion-item
+            *ngIf="formulario.get('nombre').errors && formulario.get('nombre').dirty"
+          >
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('nombre').hasError('required')"
             >
-              <p
-                class="alert-danger"
-                *ngIf="formulario.get('nombre').hasError('required')"
-              >
-                se requiere este campo
-              </p>
-              <p
-                class="alert-danger"
-                *ngIf="formulario.get('nombre').hasError('minlength')"
-              >
-                cantidad minima de caracteres es (4)
-              </p>
-              <p
-                class="alert-danger"
-                *ngIf="formulario.get('nombre').hasError('maxlength')"
-              >
-                cantidad maxima de caracteres es (10)
-              </p>
-            </div>
+              se requiere este campo
+            </p>
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('nombre').hasError('minlength')"
+            >
+              cantidad minima de caracteres es (4)
+            </p>
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('nombre').hasError('maxlength')"
+            >
+              cantidad maxima de caracteres es (10)
+            </p>
           </ion-item>
         </ion-list>
         <div class="Boton">
