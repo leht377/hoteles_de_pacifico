@@ -29,7 +29,7 @@
     this.formulario = this.registroAdminFb.group({
       nombre_empresa: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(30)]),
       correo: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(20)]),
-      telefono: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
+      telefono: new FormControl('',Validators.required, ),
       usuario  : new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
       contrasena: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)])
   });
@@ -41,6 +41,10 @@
 
   }
 
+  onResetForm() {
+    this.formulario.reset();
+  }
+
 
   onCreate(){
       this.administrador.setValues(this.formulario.value);
@@ -48,7 +52,8 @@
       this.usuario.setValues(this.formulario.value);
       console.log(this.administrador);
          this.usuarioServicios.crear(this.usuario).subscribe((usuario) => {
-           this.administrador.usuarioId = usuario.id;
+         this.onResetForm();  
+         this.administrador.usuarioId = usuario.id;
          this.administradorService.crear(this.administrador).subscribe((administrador) => console.log(administrador));
           });
       }

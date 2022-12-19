@@ -47,17 +47,19 @@ export class RegistroclientePage implements OnInit {
 
   }
 
-  // onResetForm() {
-  //   this.registrocliente.reset();
-  // }
+   onResetForm() {
+     this.formulario.reset();
+   }
 
    onCreate(){
+    
    this.cliente.setValues(this.formulario.value);
    console.log(this.cliente);
    this.usuario.setValues(this.formulario.value);
    console.log(this.cliente);
       this.usuarioServicios.crear(this.usuario).subscribe((usuario) => {
-        this.cliente.usuarioId = usuario.id;
+      this.onResetForm();  
+      this.cliente.usuarioId = usuario.id;
       this.clienteServicios.crear(this.cliente).subscribe((cliente) => console.log(cliente));
        });
    }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UsuarioService } from '../../api/usuario.service';
 import { Usuario} from '../../interface/usuario';
-
 import { Router } from '@angular/router';
 
 
