@@ -13,51 +13,143 @@
       <div class="imagen">
         <img src="../../../assets/Logo-removebg-preview.png" alt="Logo" />
       </div>
-
-      <form (ngSubmit)="onCreate()">
+      <form [formGroup]="formulario" (ngSubmit)="onCreate()">
         <ion-list>
           <ion-item fill="outline">
-            <ion-label position="floating">Nombre De La Empresa </ion-label>
+            <ion-label position="floating">Nombre</ion-label>
             <ion-input
               type="text"
-              placeholder="Empresa"
-              name="nombre_empresa"
-              [(ngModel)]="administrador.nombre"
+              placeholder="Nombre completo"
+              formControlName="nombre"
               required="true"
             ></ion-input>
           </ion-item>
+          <ion-item
+            *ngIf="formulario.get('nombre').errors && formulario.get('nombre').dirty"
+          >
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('nombre').hasError('required')"
+            >
+              <strong>se requiere este campo</strong>
+            </p>
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('nombre').hasError('minlength')"
+            >
+              cantidad minima de caracteres es (4)
+            </p>
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('nombre').hasError('maxlength')"
+            >
+              cantidad maxima de caracteres es (10)
+            </p>
+          </ion-item>
 
           <ion-item fill="outline">
-            <ion-label position="floating">Correo Eletronico</ion-label>
+            <ion-label position="floating"> Correo </ion-label>
             <ion-input
-              type="email"
-              placeholder="Correo"
-              name="correo"
-              [(ngModel)]="administrador.correo"
+              type="text"
+              placeholder="Correo Eletronico"
+              formControlName="correo"
               required="true"
             ></ion-input>
           </ion-item>
+          <ion-item
+            *ngIf="formulario.get('correo').errors && formulario.get('correo').dirty"
+          >
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('correo').hasError('required')"
+            >
+              se requiere este campo
+            </p>
+
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('correo').hasError('minlength')"
+            >
+              cantidad minima de caracteres es (4)
+            </p>
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('correo').hasError('maxlength')"
+            >
+              cantidad maxima de caracteres es (20)
+            </p>
+          </ion-item>
 
           <ion-item fill="outline">
-            <ion-label position="floating">Numero Telefonico</ion-label>
+            <ion-label position="floating"> Cedula </ion-label>
             <ion-input
               type="number"
-              placeholder="Telefono"
-              name="telefono"
-              [(ngModel)]="administrador.telefono"
+              placeholder="Cedula de Ciudadania"
+              formControlName="cedula"
               required="true"
             ></ion-input>
           </ion-item>
+          <ion-item
+            *ngIf="formulario.get('cedula').errors && formulario.get('cedula').dirty"
+          >
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('cedula').hasError('required')"
+            >
+              se requiere este campo
+            </p>
+          </ion-item>
 
           <ion-item fill="outline">
-            <ion-label position="floating">Nombre De Usuario</ion-label>
+            <ion-label position="floating">Telefono</ion-label>
             <ion-input
-              type="text"
-              placeholder="Nombre Usuario"
-              name="usuario"
-              [(ngModel)]="usuario.usuario"
+              type="number"
+              placeholder="Numero de Telefono"
+              formControlName="telefono"
               required="true"
             ></ion-input>
+          </ion-item>
+          <ion-item
+            *ngIf="formulario.get('telefono').errors && formulario.get('telefono').dirty"
+          >
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('telefono').hasError('required')"
+            >
+              se requiere este campo
+            </p>
+          </ion-item>
+
+          <ion-item fill="outline">
+            <ion-label position="floating">Nombre de Usuario</ion-label>
+            <ion-input
+              type="text"
+              placeholder="Usuario"
+              formControlName="usuario"
+              required="true"
+            ></ion-input>
+          </ion-item>
+          <ion-item
+            *ngIf="formulario.get('usuario').errors && formulario.get('usuario').dirty"
+          >
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('usuario').hasError('required')"
+            >
+              se requiere este campo
+            </p>
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('usuario').hasError('minlength')"
+            >
+              cantidad minima de caracteres es (4)
+            </p>
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('usuario').hasError('maxlength')"
+            >
+              cantidad maxima de caracteres es (10)
+            </p>
           </ion-item>
 
           <ion-item fill="outline">
@@ -65,13 +157,33 @@
             <ion-input
               type="password"
               placeholder="contraseña"
-              name="contrasena"
-              [(ngModel)]="usuario.contrasena"
+              formControlName="contrasena"
               required="true"
             ></ion-input>
           </ion-item>
+          <ion-item
+            *ngIf="formulario.get('contrasena').errors && formulario.get('contrasena').dirty"
+          >
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('contrasena').hasError('required')"
+            >
+              se requiere este campo
+            </p>
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('contrasena').hasError('minlength')"
+            >
+              cantidad minima de caracteres es (4)
+            </p>
+            <p
+              class="alert-danger"
+              *ngIf="formulario.get('contrasena').hasError('maxlength')"
+            >
+              cantidad maxima de caracteres es (10)
+            </p>
+          </ion-item>
         </ion-list>
-
         <div class="Boton">
           <ion-button fill="outline" type="submit">Registrase</ion-button>
         </div>

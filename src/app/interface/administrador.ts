@@ -1,6 +1,15 @@
 export class Administrador{
     id: string;
-    nombre: string;
+    nombre_empresa: string;
     correo: string;
-    usuarioId: number;
+    telefono: number;
+    usuarioId: string;
+
+    setValues(administrador: Administrador){
+        this.nombre_empresa = administrador.nombre_empresa;
+        this.id= administrador.id;
+        this.correo= administrador.correo;
+        this.telefono= administrador.telefono;
+        this.usuarioId= administrador.usuarioId;
+    }
 }
