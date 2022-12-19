@@ -3,24 +3,21 @@
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
     </ion-buttons>
-    <ion-title>Nombre del Hotel</ion-title>
+    <ion-title> {{hotel.nombre}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <img
-      alt="Silhouette of mountains"
-      src="https://ionicframework.com/docs/img/demos/card-media.png"
-    />
+    <img alt="Silhouette of mountains" src="{{hotel.foto}}" />
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title class="ion-text-uppercase">
+        {{hotel.nombre}}</ion-card-title
+      >
     </ion-card-header>
 
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more,
-      nothing less.
+      {{hotel.descripcion}}
 
       <app-estrellas></app-estrellas>
     </ion-card-content>
@@ -32,29 +29,29 @@
       <ion-col>
         <img
           alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
+          src="https://images.hola.com/imagenes/decoracion/20220421208402/decoracion-dormitorios-inspirada-habitaciones-hoteles-lm/1-77-410/habitaciones-hoteles-1a-a.jpg"
       /></ion-col>
       <ion-col>
         <img
           alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAht9BXMVmVIKN1YwRCqTX5ncUf0aYoXLFVgc_S9YB-SJQVQcH_CuaUv-JWcKvRxKaqkw&usqp=CAU"
       /></ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <img
           alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJyz4vMlXE8B9iD2QDwWBkCkqNXK7no-SMQ&usqp=CAU"
       /></ion-col>
       <ion-col>
         <img
           alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
+          src="https://www.homecenter.com.co/static/landing/guiasdecompra/Guias_de_compra_2/img/colores-para-habitaciones-pequenas/colores-para-habitaciones-pequenas-5.jpg"
       /></ion-col>
       <ion-col>
         <img
           alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/card-media.png"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJyz4vMlXE8B9iD2QDwWBkCkqNXK7no-SMQ&usqp=CAU"
       /></ion-col>
     </ion-row>
   </ion-grid>
@@ -76,17 +73,7 @@
             [snaps]="true"
           ></ion-range>
         </ion-item>
-        <ion-item>
-          <ion-label>Comentar</ion-label>
-          <ion-textarea placeholder="Type something here"></ion-textarea>
-        </ion-item>
       </div>
-    </ion-accordion>
-    <ion-accordion value="second">
-      <ion-item slot="header" color="light">
-        <ion-label>Comentarios</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">comentarios..........</div>
     </ion-accordion>
   </ion-accordion-group>
 </ion-content>

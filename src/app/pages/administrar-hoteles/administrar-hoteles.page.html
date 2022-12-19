@@ -11,64 +11,22 @@
   <ion-button class="btn-registro-hotel" routerLink="pages/registrohotel"
     >Registrar Hotel</ion-button
   >
-  <ion-list lines="full">
+  <ion-list lines="full" *ngFor="let hotel of hoteles ;">
     <ion-item>
       <ion-label>
-        <strong>HOTEL PACIFICO</strong>
-        <p>NIT: 34-56-5756</p>
+        <strong class="ion-text-uppercase">{{hotel.nombre}}</strong>
+        <p>{{hotel.nit}}</p>
       </ion-label>
-      <ion-button color="danger" class="btn-eliminar" slot="end">
+
+      <ion-button
+        color="danger"
+        class="btn-eliminar"
+        slot="end"
+        (click)="eleminarHotel(hotel.id)"
+      >
         <ion-icon name="trash-bin-outline"></ion-icon
       ></ion-button>
-      <ion-button color="success" lot="end" routerLink="pages/registrohotel">
-        <ion-icon name="eye-outline"></ion-icon
-      ></ion-button>
-      <ion-button slot="end" routerLink="pages/registrohotel"
-        ><ion-icon name="create-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <strong>COSMOS</strong>
-        <p>NIT: 34-56-5756</p>
-      </ion-label>
-      <ion-button color="danger" class="btn-eliminar" slot="end">
-        <ion-icon name="trash-bin-outline"></ion-icon
-      ></ion-button>
-      <ion-button color="success" lot="end">
-        <ion-icon name="eye-outline"></ion-icon
-      ></ion-button>
-      <ion-button slot="end"
-        ><ion-icon name="create-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <strong>CORTINA ROJAS</strong>
-        <p>NIT: 34-56-5756</p>
-      </ion-label>
-      <ion-button color="danger" class="btn-eliminar" slot="end">
-        <ion-icon name="trash-bin-outline"></ion-icon
-      ></ion-button>
-      <ion-button color="success" lot="end">
-        <ion-icon name="eye-outline"></ion-icon
-      ></ion-button>
-      <ion-button slot="end"
-        ><ion-icon name="create-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <strong>SOL Y LUNA</strong>
-        <p>NIT: 34-56-5756</p>
-      </ion-label>
-      <ion-button color="danger" class="btn-eliminar" slot="end">
-        <ion-icon name="trash-bin-outline"></ion-icon
-      ></ion-button>
-      <ion-button color="success" lot="end">
-        <ion-icon name="eye-outline"></ion-icon
-      ></ion-button>
-      <ion-button slot="end"
+      <ion-button slot="end" routerLink="pages/editar-hotel/{{hotel.id}}"
         ><ion-icon name="create-outline"></ion-icon>
       </ion-button>
     </ion-item>

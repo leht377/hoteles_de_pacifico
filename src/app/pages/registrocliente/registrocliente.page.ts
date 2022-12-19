@@ -27,7 +27,7 @@ export class RegistroclientePage implements OnInit {
       correo:['',Validators.required, Validators.minLength(4),Validators.maxLength(10)],
       telefono:['', Validators.required,Validators.minLength(4),Validators.maxLength(10)],
       cedula:['', Validators.required,Validators.minLength(4),Validators.maxLength(10)],
-      
+
      });
 
    }

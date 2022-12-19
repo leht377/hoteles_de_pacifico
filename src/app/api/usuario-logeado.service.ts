@@ -6,24 +6,23 @@ import { of,Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioLogeadoService {
-  public usuarioLogeado = new UsuarioLogeado();
   public usuarioLogeado$ = new Subject<UsuarioLogeado>();
-  private data$ = new Subject<UsuarioLogeado>();
   constructor() { }
 
   set(usuario: UsuarioLogeado) {
     sessionStorage.setItem('usuarioLogeado', JSON.stringify(usuario));
-    this.data$.next(usuario);
+    this.usuarioLogeado$.next(usuario);
   }
 
   get(): any {
     const value = sessionStorage.getItem('usuarioLogeado');
-    this.data$.next(JSON.parse(value));
+    this.usuarioLogeado$.next(JSON.parse(value));
     return value;
   }
 
-  getdata(): Observable<any> {
-    return this.data$;
+  get$(): Observable<UsuarioLogeado> {
+    console.log(this.usuarioLogeado$);
+    return this.usuarioLogeado$.asObservable();
   }
 
 

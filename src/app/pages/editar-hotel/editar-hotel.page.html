@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Hotel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <div class="imagen">
+        <img src="../../../assets/Logo-removebg-preview.png" alt="Logo" />
+      </div>
+
+      <form (ngSubmit)="onUpdate()">
+        <ion-list>
+          <ion-item fill="outline">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input
+              type="text"
+              name="nombre"
+              [(ngModel)]="hotel.nombre"
+              placeholder="Nombre del Hotel"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input
+              type="text"
+              name="direccion"
+              [(ngModel)]="hotel.direccion"
+              placeholder="Dirección del Hotel"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">Numero de contacto</ion-label>
+            <ion-input
+              type="number"
+              name="telefono"
+              [(ngModel)]="hotel.telefono"
+              placeholder="Telefono"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">NIT</ion-label>
+            <ion-input
+              type="number"
+              name="nit"
+              [(ngModel)]="hotel.nit"
+              placeholder="NIT"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">Descripcion</ion-label>
+            <ion-input
+              type="text"
+              name="descripcion"
+              [(ngModel)]="hotel.descripcion"
+              placeholder="Descripcion"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline" class="ion-margin-top">
+            <ion-label position="floating">URL foto</ion-label>
+            <ion-input
+              type="text"
+              name="foto"
+              [(ngModel)]="hotel.foto"
+              placeholder="URL foto"
+            ></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <div class="Boton">
+          <ion-button fill="outline" type="submit">Actualizar</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

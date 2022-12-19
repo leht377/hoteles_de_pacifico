@@ -15,11 +15,8 @@
   </ion-header> -->
 
   <div id="container">
-    <ion-list>
-      <app-hotel-item></app-hotel-item>
-      <app-hotel-item></app-hotel-item>
-      <app-hotel-item></app-hotel-item>
-      <app-hotel-item></app-hotel-item>
+    <ion-list *ngFor="let hotel of listaHoteles;">
+      <app-hotel-item [hotel]="hotel"></app-hotel-item>
     </ion-list>
   </div>
 </ion-content>

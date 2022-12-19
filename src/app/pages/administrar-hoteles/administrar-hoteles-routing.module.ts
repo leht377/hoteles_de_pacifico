@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'pages/registrohotel',
     loadChildren: () => import('../../pages/registrohotel/registrohotel.module').then( m => m.RegistrohotelPageModule)
   },
+  {
+    path: 'pages/editar-hotel/:id',
+    loadChildren: () => import('../../pages/editar-hotel/editar-hotel.module').then( m => m.EditarHotelPageModule)
+  },
 ];
 
 @NgModule({
