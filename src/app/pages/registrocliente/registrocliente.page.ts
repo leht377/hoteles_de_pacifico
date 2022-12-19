@@ -16,7 +16,7 @@ import { Hotel } from 'src/app/interface/hotel';
 export class RegistroclientePage implements OnInit {
   public cliente = new Cliente ();
   public usuario = new Usuario ();
-  
+
 
 
 
@@ -52,11 +52,10 @@ export class RegistroclientePage implements OnInit {
   // }
 
    onCreate(){
-   this.cliente.setValues(this.formulario.value)
-   console.log(this.cliente)
-   this.usuario.setValues(this.formulario.value)
-   console.log(this.cliente)
-  
+   this.cliente.setValues(this.formulario.value);
+   console.log(this.cliente);
+   this.usuario.setValues(this.formulario.value);
+   console.log(this.cliente);
       this.usuarioServicios.crear(this.usuario).subscribe((usuario) => {
         this.cliente.usuarioId = usuario.id;
       this.clienteServicios.crear(this.cliente).subscribe((cliente) => console.log(cliente));
